@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<style>
+  .slid{
+ opacity: 1;
+ transition: ease 1s;
+ filter: blur(5px);
+ transform: translatey(10%);
+}
+  .slidshow{
+ opacity: 1;
+ transition: ease 1s;
+ filter: blur(0);
+ transform: translate(0%);
+}
+
+
+</style>
+<form class="container-md input-group my-3">
+ <input name="q" type="search" class="form-control" placeholder="Track Your Package..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+ <button type="submit" class="btn btn-info">Search</button>
+</form>
+
+{% if messages %}
+  {% for message in messages %}
+		<p id="messages" style="width: fit-content; margin-inline: auto; padding-inline: 2rem;" class="alert alert-{{message.tags}} text-center">{{message}}</p>
+	{% endfor %}
+ {% endif %}  
+
+ <h3 class="text-center">Track & <span class="text-warning">Trace shipment</span></h3>
+
+{% for x in data %}
+<div class="text-center mt-5">
+  <img src="https://eliteshippinglimited.co.uk/tracking/wp-content/uploads/2021/02/0521e086f07edcacc83c47553d055aa1.gif" alt="">
+</div>
+<div class="container-sm col-lg-8 mt-5 slid">
+  <div class="container-sm d-flex col-sm-d-block justify-content-between my-3">
+    <h3 class="text-start fw-bold">Waybill: {{x.waybillNumber}}</h3>
+    <a class="btn btn-outline-info" href="/pdf/{{ x.id}}">Print Invoice</a>
+  </div>
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td class="text-uppercase fw-bold" >Est. Delivery date:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.Est_Delivery_date}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >Destination Area:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.destination_service_area}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">Origin Service Area:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.origin_service_area}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">Delivery Status:</td>
+        <td colspan="2" class="table-active col-8 fw-bold {% if delivery_status == pending %} text-warning {% endif %}">{{x.delivery_status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-sm col-lg-8 mt-5 slid">
+  <h3 class="text-center text-warning slid fw-bold">Sender's Details</h3>
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td class="text-uppercase fw-bold" >sender's name:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.shipperName}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >Sender's address:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.sender_address}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >sender's number:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.shipperNumber}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >sender's email:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.shipperemail}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-sm col-lg-8 mt-5 slid">
+  <h3 class="text-center text-warning slid fw-bold">Receiver's Details</h3>
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td class="text-uppercase fw-bold" >receiver's name:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.receiverName}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >Receiver's address:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.receiver_address}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >receiver's number:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.receiverNumber}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >receiver's email:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.receiveremail}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-sm col-lg-8 mt-5 slid mb-5">
+  <h3 class="text-center text-warning slid fw-bold">Waybill's Details</h3>
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr>
+        <td class="text-uppercase fw-bold" >content:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.shipment_content}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">shipping description:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.item_description}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">Mode of Shhipment:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.transportation_mode}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">Total Charges:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">${{x.total_charges}}</td>
+      </tr>
+
+      <tr>
+        <td  class="text-uppercase fw-bold">Weight of Product:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.weight}}</td>
+      </tr>
+
+      <tr>
+        <td class="text-uppercase fw-bold" >Qauntity Product:</td>
+        <td colspan="2" class="table-active col-8 fw-bold">{{x.qauntity}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+{% endfor %}
+{% endblock %}

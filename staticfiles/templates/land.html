@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+div #bg-img{
+ background-image: url(/parcel/static/image/logistic.jpg.jpg);
+ background-repeat: no-repeat;
+ background-size: 100%;
+}
+</style>
+
+<div class="container-fluid  text-center p-5" id="bg-img" >
+<h3 class="text-light fw-bold mt-4 hid">Land Flight</h3>
+<a class="text-decoration-none text-light" href="{% url 'home' %}">Home</a> <span class="text-info mx-3">>>></span> <span class="text-warning">Land Flight</span>
+</div>
+<img style="max-height: 50vh;" class="w-100" src="{% static 'static/image/land.jpg' %}" alt="">
+<div class="container-fluid bg-light text-dark p-5 text-center">
+ <h2 class="text-info">Land Freight</h2>
+ <P class="text-dark hid fw-bold">Land Service From GDC</P>
+  <ol class="slid">
+   GDC can handle a variety of domestic & international trucking services to suit your needs. Currently we offer our customers FTL, LTL & Flat bed trucking services within the North America, South America, Europe, Asia and Africa.
+   By outlining our expectations, we are ensured that we are providing a domestic service that is second to none. Additionally, we monitor and maintain current proof of valid cargo liability insurance for each qualifying carrier. This protects you. Next, we consider pricing.
+   Our core carriers must be proven performers in service and price. Because of the large volume of cargo that we move, we are able to negotiate excellent discounts, which we are in turn able to pass on to our customers. As a result, our customers enjoy the benefits of superior service as well as discounted pricing. As we continue to strive for excellence, we look forward to offering additional automated features that will allow our customers to see real-time status information on their cargo.
+  </ol>
+</div>
+{% endblock %}

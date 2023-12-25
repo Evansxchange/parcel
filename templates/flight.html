@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+div #bg-img{
+ background-image: url(/parcel/static/image/logistic.jpg.jpg);
+ background-repeat: no-repeat;
+ background-size: 100%;
+}
+</style>
+
+<div class="container-fluid  text-center p-5" id="bg-img" >
+<h3 class="text-light fw-bold mt-4 hid">Air Flight</h3>
+<a class="text-decoration-none text-light" href="{% url 'home' %}">Home</a> <span class="text-info mx-3">>>></span> <span class="text-warning">Air Flight</span>
+</div>
+<img style="max-height: 50vh;" class="w-100" src="{% static 'static/image/cargo.jpg' %}" alt="">
+<div class="container-fluid bg-light text-dark p-5 text-center">
+ <h2 class="text-info">Air Flight</h2>
+ <P class="text-dark hid fw-bold">Global Delivery company provides full-service Air Export and Air Import transportation to and from all parts of the world
+  Services Include:</P>
+  <ol class="slid">
+   Local and long distance transportation from shipper’s door to consignee’s door
+Containerization services
+Direct and consolidation Import and Export transportation
+Full documentation service Letter of Credit
+Drafts
+Certificates of Origins
+Invoices
+Dangerous goods transportation services
+Packing and documentation services Dangerous goods
+Perish
+  </ol>
+</div>
+{% endblock %}

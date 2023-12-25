@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+ div #bg-img{
+  background-image: url(/parcel/static/image/logistic.jpg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+ }
+</style>
+
+<div class="container-fluid  text-center p-5" id="bg-img" >
+ <h3 class="text-light fw-bold mt-4 hid">About Us</h3>
+ <a class="text-decoration-none text-light" href="{% url 'home' %}">Home</a> <span class="text-info mx-3">>>></span> <span class="text-warning">About</span>
+</div>
+<div class="container-fluid bg-light text-dark p-5">
+ 
+ <div class="container-md">
+  <h2 class="text-info">About Sky Rocket Parcel</h2>
+  <P class="text-muted">
+    Sky Rocket Parcel is a superior, express shipping company. Whilst the Company has been in practice for over 10 years, the founders offer in excess of 19 years valuable industry experience. Our extensive knowledge of the express delivery market allows Global Delivery Company  to offer our clients an array of different shipping options from our unsurpassed Worldwide and local distribution network.
+  
+  Based in the heart of London, Sky Rocket Parcel  offers an international delivery service, with Sky Rocket Parcel  options available for everything from a single envelope to multiple piece packages. So, whether you’re looking for business to business delivery or domestic courier services, Global Delivery Company   can securely offer a delivery solution tailored to your requirements.
+  
+  For further peace of mind, we also offer a track and trace service so that you can see the progress of your shipment at all times as well as sending you an email notification once your consignment has been successfully delivered. Within our range of express shipping options, we offer the choice of same day, next day and timed delivery as well as flexible collection times for your convenience.
+  
+  Aside from our International courier service, Global Delivery Company also offers a collection and storage service. With 5000 square feet of storage space, 24 hour CCTV and a team of specially trained staff at your assistance, you are welcome to hire as much or as little space as you need.
+   </P>
+ </div>
+</div>
+{% endblock %}

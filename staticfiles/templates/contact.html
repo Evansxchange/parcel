@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+div #bg-img{
+ background-image: url(/parcel/static/image/logistic.jpg.jpg);
+ background-repeat: no-repeat;
+ background-size: 100%;
+}
+</style>
+
+<div class="container-fluid  text-center p-5" id="bg-img" >
+<h3 class="text-light fw-bold mt-4">Contact</h3>
+<a class="text-decoration-none text-light" href="{% url 'home' %}">Home</a> <span class="text-info mx-3">>>></span> <span class="text-warning">Contact Us</span>
+</div>
+<img style="max-height: 50vh;" class="w-100" src="{% static 'static/image/contact.jpg' %}" alt="">
+<div class="container-fluid bg-light text-dark p-5 text-center">
+ <div class="container-md">
+  <h2 class="text-info">Our support channels</h2>
+ <P class="text-muted hid"><a class="text-decoration-none text-danger" href="">support@Skyrocketparcel.com</a></P>
+ <p class="fw-bold">Location <span class="text-info">>>></span> England, London.</p>
+ </div>
+</div>
+{% endblock %}

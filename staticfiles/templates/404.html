@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+ .page_404{
+  min-height: 80vh;
+ }
+ footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ }
+</style>
+<div class="container-fluid page_404 bg-light text-dark p-5">
+    <h1 class="text-info fw-bold">Oops!</h1>
+   <h3>We can't seem tofind the <br> Page you're looking for.</h3>
+   <small>Error code: 404</small>
+   <p>Here are some helpful links instead</p>
+   <a class="btn btn-info" href="{% url 'home' %}">Go back to Homepage</a>
+</div>
+{% endblock %}

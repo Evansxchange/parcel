@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+ <div class="carousel-inner ">
+   <div class="carousel-item active">
+     <img src="{% static 'image/logistic.jpg.jpg' %}" class="d-block w-100" alt="...">
+     <div class="head-text container | hid">
+      <h2 class="fw-bold">Delivery Execellence</h2>
+     <p>we deliver fast international cargo services</p>
+     </div>
+   </div>
+   <div class="carousel-item">
+     <img src="{% static 'image/land.jpg' %}" class="d-block w-100" alt="...">
+     <div class="head-text container hid">
+      <h2 class=" fw-bold">makes you smile</h2>
+     <p class="fs-sm">on time Delivery.., don't worry and be happy</p>
+     </div>
+   </div>
+   <div class="carousel-item">
+     <img src="{% static 'image/cargo.jpg' %}" class="d-block w-100" alt="...">
+     <div class="head-text container hid ">
+      <h2 class=" fw-bold">fright solution  for all industry</h2>
+     <p>we are best in fright services</p>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row  text-center d-flex align-items-center bg-light">
+    <div class="col-lg-4">
+    <img class="w-25 hid" src="{% static 'static/image/world.png' %}" alt="">
+    <div>
+      <a class="btn btn-warning my-2" href="{% url 'track' %}">Track Your Parcel</a>
+    </div>
+    </div>
+    <div class="col-lg-6">
+      <h3 class="text-capitalize text-warning pt-3">we provide services across the globe</h3>
+      <p class="text-muted fs-sm">We offer a Global Logistics Network with our worldwide offices and also high quality distribution facilities which are staffed by dedicated teams of the top of experts. We have more than 30 years of experiences in this field.</p>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light text-dark">
+  <div class="row">
+    <div class="col-lg-4 col-12 my-2 text-center">
+      <img class="w-25 hid" src="{% static 'static/image/pngwing.com.png' %}" alt="">
+      <h3 class="my-2 text-danger">Fast Service</h3>
+      <p class="text-muted">At WestFlight Express, We focus our energy at the quality of service delivery to our customers. We know that delayed delivery can adversely affect businesses this is why we deliver at a very fast pace. </p>
+    </div>
+    <div class="col-lg-4 col-12 my-2 text-center">
+      <img class="w-25 hid" src="{% static 'static/image/pngwing.com (2).png' %}" alt="">
+      <h3 class="my-2 text-danger">24/7 Support</h3>
+      <p class="text-muted">We have a 24/7 support system. You can use our live support button which responds immediately or you can mail us through our support mail address </p>
+    </div>
+    <div class="col-lg-4 col-12 my-2 text-center">
+      <img class="w-25 hid" src="{% static 'static/image/pngwing.com (1).png' %}" alt="">
+      <h3 class="my-2 text-danger">Safe Delivery</h3>
+      <p class="text-muted">The safety of goods and shipments handed over to us is paramount to us. We apply all the possible technologies to eliminate possibilities of loss and damages to the barest</p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-light p-5">
+  <section id="testimonials" class="testimonials ">
+    <div class="container">
+      <div class="text-center text-dark">
+        <p class="py-2">What they say</p>
+        <h3 class="fw-bold text-warning">client's testimonial</h3>
+        <p class="my3">our commitment to sustainability helps us reduce waste and share the benefits with our customers.
+        </p>
+      </div>  
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide slid bg-light overflow-hidden shadow-lg rounded p-2" data-bs-ride="carousel">
+        <div class="carousel-inner  m-3 p-3 rounded">
+          <div class="carousel-item text-center active rounder">
+            <p class="bg-light mt-5 p-2 rounded text-muted ">  "Being able to locate my goods has been my best sought option and that Skyrocketparcel provided me and my firm with. I am happy with them.            “
+            </p>
+            <img src="{% static 'static/image/testimonial.jpg' %}" class="d-block rounded-circle mx-auto" style="width: 5rem; height: 5rem;" alt="...">
+            <h4 class="my-3 text-dark">Joseph Martin</h4>
+            <p class="text-muted fs-sm">Head Of Logistic, Mikoft</p>
+          </div>
+          <div class="carousel-item text-center rounder">
+            <p class="bg-light mt-5 p-2 rounded text-muted">“Skyrocketparcel gave us the services we needed since the outbreak of COVID-19. We are very happy to be associated with this great company.“</p>
+            <img src="{% static 'static/image/testimonial2.jpg' %}" class="d-block rounded-circle mx-auto" style="width: 5rem; height: 5rem;" alt="...">
+            <h4 class="my-3 text-dark">David Beckham</h4>
+            <p class="text-muted fs-sm">Trader</p>
+          </div>
+          <div class="carousel-item text-center rounder">
+            <p class="bg-light mt-5 p-2 rounded text-muted">
+              "The firm has always used Skyrocketparcel because of their speed and how safely they handle our goods
+            </p>
+            <img src="{% static 'static/image/testimonial.jpg' %}" class="d-block rounded-circle mx-auto" style="width: 5rem; height: 5rem;" alt="...">
+            <h4 class="my-3 text-dark">Kerry Jensen</h4>
+            <p class="text-muted fs-sm">Hubbyist Trader</p>            
+          </div>
+        </div>
+      </div>
+    </div>   
+</div>
+{% endblock %}

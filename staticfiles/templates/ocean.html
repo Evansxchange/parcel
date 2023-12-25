@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<style>
+div #bg-img{
+ background-image: url(/parcel/static/image/logistic.jpg.jpg);
+ background-repeat: no-repeat;
+ background-size: 100%;
+}
+</style>
+
+<div class="container-fluid  text-center p-5" id="bg-img" >
+<h3 class="text-light fw-bold mt-4 hid">Ocean Flight</h3>
+<a class="text-decoration-none text-light" href="{% url 'home' %}">Home</a> <span class="text-info mx-3">>>></span> <span class="text-warning">Air Flight</span>
+</div>
+<img style="max-height: 50vh;" class="w-100" src="{% static 'static/image/logistic.jpg.jpg' %}" alt="">
+<div class="container-fluid bg-light text-dark p-5 text-center">
+ <h2 class="text-info">Ocean Flight</h2>
+ <P class="text-dark hid fw-bold">Ocean Freight / Transportation Services from seaway shipping.</P>
+  <p class="slid text-muted">seaway shipping is a licensed NVOCC. We’ve negotiated our contracts and carrier agreements specifically to meet the needs of our clients. Whether you are moving full containers, less than container loads, or other specialty cargo, we can come up with a sound logistics plan that’s right for you. Take advantage of our buying power.</p>
+  <h3 class="hid">Services Include:</h3>
+  <ol class="text-start">
+   <div class="slid text-muted">
+   <li>FCL, LCL, Break-bulk & Roll on/Roll off Services</li>
+   <li>LCL consolidation/disconsolate Services</li>
+   <li>Customer needs drive our consolidation and disconsolate <br>
+    services. Take advantage of our existing consolidations for economical ocean freight opportunities.</li>
+   <li>Our services continue to grow based on customer demand. Currently we offer regularly scheduled consolidations from Italy with competitive pricing to meet your needs.</li>
+   <li>We are also offering regularly scheduled consolidations from Shanghai. Please contact our Marketing Department for our sailing schedule and pricing information today.</li>
+   </div>
+  </ol>
+  <h3 class="hid">Specialized Cargo</h3>
+  <p class="slid text-muted">seaway shipping is well versed in the handling of all types of specialized cargo. All of our export  personnel are IATA/FIATA, and IMDG hazmat-certified. In addition, we have a Certified Ocean  Forwarder (COF) on staff, and an export compliance team with countless years of experience. Our knowledgeable staff has been trained to handle all types of cargo. Whether you are moving project cargo, exhibition freight, or dangerous goods, we are your single source for expert handling.</p>
+  <h3 class="hid">Import & Export Forwarding Services</h3>
+  <p class="slid text-muted">As country requirements change, so do the documentary requirements. We are experienced in all phases of international transportation documentation. Utilize our network of foreign agents to set up import routings that meet your needs. For exports, contact us for a Shipper’s Letter of Instructions (SLI) and you can outline your requirements to us. Send us your Letter of Authorization (LOA) or a valid Power of Attorney and we’ll take care of</p>
+</div>
+{% endblock %}

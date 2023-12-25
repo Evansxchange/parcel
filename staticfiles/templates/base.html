@@ -1,0 +1,131 @@
+{% load static %}
+{% load bootstrap5 %}
+<!-- {% bootstrap_css %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+ <!-- Style -->
+ <link rel="stylesheet" href="{% static 'css/main.css' %}">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Josefin+Sans:wght@300;400;600&family=League+Spartan:wght@400;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Overpass:wght@300;600&family=Poppins:wght@300;400;500;600;800&family=Roboto:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Josefin+Sans:wght@300;400;600&family=League+Spartan:wght@400;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Overpass:wght@300;600&family=Poppins:wght@300;400;500;600;800&family=Roboto:ital@1&display=swap" rel="stylesheet">
+ <title>Document</title>
+</head>
+<body class="bg-dark text-white">
+ <div class="nav bg-dark">
+
+  <a  class="logo" href="{% url 'home' %}"><img style="width: 10rem; height: 7rem;" src="{% static 'image/logo1.png' %}" alt="logo"></a>
+
+  <div style="border: none;" class="toggle">
+   <span class="bg-light"></span>
+   <span class="bg-light"></span>
+   <span class="bg-light"></span>
+  </div>
+  <div class="ul bg-dark">
+   <li>
+    <a class="{% if nav == 'home' %} text-warning {% endif %}" href="{% url 'home' %}">Home</a>
+   </li>
+   <li>
+    <a class="{% if nav == 'about' %} text-warning {% endif %}" href="{% url 'about' %}">about us</a>
+   </li>
+   <li class="dropdown">
+    <span class="text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     our services
+    </span>
+   <ul class="dropdown-menu">
+    <li><a  class="dropdown-item text-dark {% if nav == 'air' %} text-warning {% endif %}" href="{% url 'air' %}">Air Flight</a></li>
+    <li><a  class="dropdown-item text-dark {% if nav == 'ocean' %} text-warning {% endif %}" href="{% url 'ocean' %}">Ocean Flight</a></li>
+    <li><a  class="dropdown-item text-dark {% if nav == 'land' %} text-warning {% endif %}" href="{% url 'land' %}">Land Flight</a></li>
+  </ul>
+   </li>
+   <li class="">
+    <a class="{% if nav == 'contact' %} text-warning {% endif %}" href="{% url 'contact' %}">contact us</a>
+   </li>
+   <li>
+    <a class="{% if nav == 'track' %} text-warning {% endif %} p-1" href="{% url 'track' %}">track</a>
+   </li>
+  </div>
+ </div>
+
+ 
+{% block main %}
+
+{% endblock %}
+
+<footer>
+ <div class="container-fluid bg-secondary slid">
+  <div class="row align-items-center text-center">
+   <div class="col-6 col-lg-4 slid2 p-3">
+    <h4 class="text-danger">Our Services</h4>
+    <div><a class="text-white text-decoration-none " href="{% url 'land' %}">Land Transportation</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'air' %}">Air Freight</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'ocean' %}">Ocean Freight</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'land' %}">Rail Internation shipping</a></div>
+   </div>
+   <div class="col-6 col-lg-4">
+    <h4 class="text-danger">Quick Links</h4>
+    <div><a class="text-white text-decoration-none {% if nav == 'home' %} active {% endif %}" href="{% url 'home' %}">Home</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'about' %}">About Us</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'about' %}">Company History</a></div>
+    <div><a class="text-white text-decoration-none" href="{% url 'track' %}">Track Your Parcel</a></div>
+   </div>
+
+   <div class="col-12 col-lg-4 text-center mt-3">
+    <p style="font-size: 14px;" class="fw-bold">Copyright <span class="text-dark">&copy;</span> 2023 Sky Rocket Parcel. All Rights Reserved</p>
+   </div>
+   </div>
+
+
+  </div>
+ </div>
+</footer>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+ var _smartsupp = _smartsupp || {};
+ _smartsupp.key = '30b2a0147806d723503a485b6c1dcd1859ed8654';
+ window.smartsupp||(function(d) {
+   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+   s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+   c.type='text/javascript';c.charset='utf-8';c.async=true;
+   c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+ })(document);
+ </script>
+ <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
+<script>
+ const menuBtn = document.querySelector('.toggle')
+ const menu = document.querySelector('.ul')
+
+menuBtn.addEventListener('click', ()=>{
+ menu.classList.toggle('active')
+ console.log(menuBtn)
+})
+
+const observer2 = new IntersectionObserver((entries) => {
+ entries.forEach((entry) => {
+  console.log(entry)
+  if (entry.isIntersecting) {
+   entry.target.classList.add('slidshow');
+  } else {
+   entry.target.classList.remove('slidshow');
+  }
+ });
+});
+
+const slide = document.querySelectorAll('.slid');
+slide.forEach((el) => observer2.observe(el))
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="{% static 'static/js/main.js' %}"></script>
+</body>
+</html>
+ 
